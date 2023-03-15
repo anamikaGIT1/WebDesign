@@ -1,0 +1,69 @@
+Assignment – 7
+
+
+The assignment 7 consists of a Portfolio of myself.
+There is a navigation button in the bottom where we can navigate to the about page and the contact page.
+
+The SASS components that are used in the assignment are as follows:
+
+@mixin- lets you create CSS code that is to be reused throughout the website.
+The @mixin grid($val) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+  gap:1.5rem;
+}
+ Function is used to set the grid value, that is used in the box container.
+
+.home{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap:4rem;
+  min-height: calc(100vh - 6.5rem);
+
+  .image{
+    flex:1 1 42rem;
+    text-align: center;
+
+    img{
+      height: 50rem;
+      width: 50rem;
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    }
+  }
+
+Over here nesting is used to set the values of objects inside other objects.
+
+$crimson : crimson;
+This is the variable that sets the value of $crimson to crimson.
+
+.contact h1%blue{
+  font-size: 3rem;
+        text-transform: uppercase;
+        color:$white;
+        padding-bottom: 1rem;
+}
+
+.contact{
+
+  .row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:2rem;
+
+    .info-container{
+      width:40rem;
+
+      h1{
+        @extend %blue;
+      }
+
+This is a place holder, what it does is it basically holds code, that can be extended to the class of your choice. Here we extend blue to contact class with h1 tag, and in place of h1 we just add, @extend %blue which basically extends the code to the h1 tag of row class
+
+$c: "center";
+
+.heading{
+  text-align: #{$c};
+
+This is an example of interpolation used, where we can see, center is stored into a variable as $c. this is then used in the heading class where when we want to align the text, instead of writing center, we can just use #{$c}.
